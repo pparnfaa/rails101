@@ -1,1 +1,5 @@
 <h1>Hello World</h1>
+<%= button_to "Logout", session_path,method: :delete %>
+
+<%= link_to "Sign up", new_registration_path %>
+<%= link_to "Log in", new_session_path %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resource :posts
+  resource :registration, only: %i[new create]
+  resource :session, only: %i[new create destroy]
+  resources :passwords, param: :token
   # get "home/index"
   get "home" => "home#index"
 
@@ -14,4 +18,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "home#index"
 end
